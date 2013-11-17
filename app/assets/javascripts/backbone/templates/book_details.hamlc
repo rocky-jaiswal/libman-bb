@@ -1,8 +1,17 @@
 %table
   %tbody
     %tr
-      %td "Title"
-      %td= @title
+      %td Title
+      %td= @book.title
     %tr
-      %td "Author"
-      %td= @author
+      %td Author
+      %td= @book.author
+    %tr
+      %td ISBN
+      %td= @book.isbn
+    %tr
+      %td Publication Date
+      %td= @book.publication_date
+    %tr
+      %td Tags
+      %td= @book.tags
