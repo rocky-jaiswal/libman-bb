@@ -1,0 +1,13 @@
+%h1 Listing books
+%table
+  %thead
+    %tr
+      %th Title
+      %th Author
+  %tbody
+    - @books.each do |book|
+      %tr
+        %td
+          %a{:href => "#/book/#{book.id}", :class => "show-book", "data-book-id" => book.id} 
+            = book.title
+        %td= book.author

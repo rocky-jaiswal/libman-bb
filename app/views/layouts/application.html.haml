@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Libman
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    / Nav Bar
+    .row
+      .large-12.columns
+        %h1 Library Management
+        %hr/
+    / End Nav
+    / Main Page Content
+    .row
+      .large-12.columns{:role => "content"}
+        = yield
+    / End Main Content

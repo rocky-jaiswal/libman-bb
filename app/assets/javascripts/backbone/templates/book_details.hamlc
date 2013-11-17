@@ -1,0 +1,8 @@
+%table
+  %tbody
+    %tr
+      %td "Title"
+      %td= @title
+    %tr
+      %td "Author"
+      %td= @author
