@@ -7,6 +7,7 @@ class Libman.Views.BookListing extends Backbone.View
 
   initialize: ->
     @model.on('change', @showDetails, @)
+    @detailView = new Libman.Views.BookDetails({model: @model})
 
   showBookDetails: (e) ->
     bookId = $(e.currentTarget).data("book-id")
@@ -14,7 +15,7 @@ class Libman.Views.BookListing extends Backbone.View
     @model.fetch()
 
   showDetails: ->
-    new Libman.Views.BookDetails({model: @model})
+    @detailView.render()
 
   
 
