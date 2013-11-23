@@ -5,15 +5,16 @@ class Libman.Views.BookListing extends Backbone.View
   events:
     "click .show-book": "showBookDetails"
 
-  showBookDetails: (e) ->
-    e.preventDefault()
-    bookId = $(e.currentTarget).data("book-id")
-    book = new Libman.Models.Book({id: bookId})
-    book.on('change', @showDetails, @)
-    book.fetch()
+  initialize: ->
+    @model.on('change', @showDetails, @)
 
-  showDetails: (book) ->
-    new Libman.Views.BookDetails({model: book})
+  showBookDetails: (e) ->
+    bookId = $(e.currentTarget).data("book-id")
+    @model.set({id: bookId})
+    @model.fetch()
+
+  showDetails: ->
+    new Libman.Views.BookDetails({model: @model})
 
   
 

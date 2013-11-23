@@ -6,7 +6,8 @@ window.Libman =
   Routers: {}
   
   init: ->
-    new Libman.Views.BookListing()
+    new Libman.Views.BookListing
+      model: new Libman.Models.Book()
 
 $ ->
   #$(document).foundation()

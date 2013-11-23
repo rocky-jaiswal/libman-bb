@@ -46,6 +46,8 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'konacha'
+  gem 'sinon-rails'
+  gem 'poltergeist'
 end
 
 # Use ActiveModel has_secure_password
